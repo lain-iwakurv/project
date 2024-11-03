@@ -11,7 +11,7 @@
 // "Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
 
 // 4) Потренироваться и переписать цикл еще двумя способами*/
-let numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?");
+let numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 let personalMovieDB = {
     count: numberOfFilms, 
     movies: {
@@ -27,12 +27,17 @@ let personalMovieDB = {
 let a;
 let b;
 for (let i = 0; i < 2; i++) {
-    a = prompt('Один из последних просмотренных фильмов?');
-    b = prompt('На сколько оцените его?');
-    personalMovieDB.movies[a] = b;
+    a = prompt('Один из последних просмотренных фильмов?', "");
+    b = prompt('На сколько оцените его?', "");
+    
+    if (a != null && b != null && a != "" && b != "" &&  a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log("done!");
+    }
+    else {
+        console.log("error");
+        i--;
+    }
+    
 }
-
-// personalMovieDB.movies[a] = b;
-// personalMovieDB.movies[] = d;
-
 console.log(personalMovieDB);
