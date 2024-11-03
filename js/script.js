@@ -24,13 +24,15 @@ let personalMovieDB = {
     privat: false
 }
 
-
+let a;
+let b;
 for (let i = 0; i < 2; i++) {
-    let a = prompt('Один из последних просмотренных фильмов?');
-    let b = prompt('На сколько оцените его?');
+    a = prompt('Один из последних просмотренных фильмов?');
+    b = prompt('На сколько оцените его?');
+    personalMovieDB.movies[a] = b;
 }
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+// personalMovieDB.movies[a] = b;
+// personalMovieDB.movies[] = d;
 
 console.log(personalMovieDB);
